@@ -1,0 +1,59 @@
+.flipHeader, .flipFooter{
+    display: flex;
+    background-color: rgb(131,185,45);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+.flipHeaderLeft {
+     margin-left: 50px;
+}
+.flipHeaderRight{
+    margin-right: 50px;
+}
+.headerLogo{
+    width: 100%;
+    height: 45px;
+}
+.headerSearch{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color: rgb(215, 238, 153);
+
+}
+.headerSearch:hover{
+    background-color: white;
+}
+.flipContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url(../files/extfile/backGroundImgURL.jpg);
+    background-position: center center;
+    width: 100%;
+    height: 90vh;
+}
+.bookWrapper{
+}
+.flipFooterLeft, .flipFooterMiddle, .flipFooterRight{
+    display: flex;
+    align-items: center;
+}
+.flipFooterLeft{
+   margin-left: 50px;
+}
+.flipFooterMiddle{
+}
+.flipFooterRight{
+   margin-right: 50px;
+}
+.footerIcon{
+    margin-left: 20px;
+}
+.footerSearch{
+    width: 30%;
+    height: 30px;
+    border: none;
+}
