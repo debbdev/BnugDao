@@ -52,11 +52,12 @@ export default function Welcome() {
      checkBnugToken(bnugBalance);
     }
   }
+  const [err, setErr] =useState(null);
   let tokenErr;
   function checkBnugToken (bnugBalance) {
-    let tokenErr;
     if(bnugBalance<1){
-       tokenErr = "Get Your BNUG Token to Continue";
+      tokenErr = "Get Your BNUG Token to Continue";
+      setErr(tokenErr);
        window.location.reload();
    }else{
        navigate('/bnug');
@@ -168,7 +169,7 @@ export default function Welcome() {
          </div>
          <div className='welcomeContainer'>
                <div className='inputContainer'>
-                    {tokenErr &&<p>{tokenErr}</p>}
+                    <div>{tokenErr && <p>{tokenErr}</p>}</div>
                     {userAddress ? <button onClick={logOut} className="verifyBtn">Disconnect Wallet</button> : <button onClick={handleOpenModal} className="verifyBtn">Connect Wallet To Start Reading</button>}
         <Modal
         open={modal}
