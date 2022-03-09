@@ -16,7 +16,6 @@ import email from '../style/icon/youjian.png';
 import table from '../style/icon/tableOfContent.png';
 import './Flip.css';
 import './Welcome.css';
-import { formatEther, formatUnits } from '@ethersproject/units';
 import QRCode from "react-qr-code";
 import Modal from '@mui/material/Modal';
 import bnb from './svg/bnb.svg';
@@ -26,7 +25,7 @@ import wc from './svg/wc.svg';
 import Moralis from 'moralis';
 import WalletConnect from "@walletconnect/client";
 import WalletConnectQRCodeModal from "@walletconnect/qrcode-modal";
-import Web3 from "web3";
+
 
 export default function Welcome() {
   Moralis.initialize("4LSqLovliBGDxbBA6BJh2NTR7J7Wa8IfpXtKnRxi");
@@ -76,19 +75,9 @@ export default function Welcome() {
       infuraId: '8c8a6ca340e849bcb1cd809bfe0bcbfa',
       qrcodeModal: WalletConnectQRCodeModal,
     });
-     const connect = await connector.connect();
-     const walletconnect = new Web3(connect);
+     const walletconnect = await connector.connect();
     //Change made here
     const user = await Moralis.authenticate({ provider: walletconnect,chainId: 56,
-    mobileLinks: [
-      "rainbow",
-      "metamask",
-      "argent",
-      "trust",
-      "imtoken",
-      "pillar",
-    ]});
-    const web3 = await Moralis.enableWeb3({ provider: walletconnect,chainId: 56,
     mobileLinks: [
       "rainbow",
       "metamask",
@@ -108,19 +97,9 @@ export default function Welcome() {
       qrcodeModal: WalletConnectQRCodeModal,
       qrcode: true,
     });
-     const connect = await connector.connect();
-     const walletconnect = new Web3(connect);
+     const walletconnect = await connector.connect();
     //Change made here
     const user = await Moralis.authenticate({ provider: walletconnect,chainId: 56,
-    mobileLinks: [
-      "rainbow",
-      "metamask",
-      "argent",
-      "trust",
-      "imtoken",
-      "pillar",
-    ]});
-    const web3 = await Moralis.enableWeb3({ provider: walletconnect,chainId: 56,
     mobileLinks: [
       "rainbow",
       "metamask",
@@ -151,12 +130,6 @@ export default function Welcome() {
     if(!modal){
       setModal(true);
     }
-  }
-
-  
-
-  const handleConnectClick = async()=>{
-    setModal(true);
   }
 
   const HoverText = () => {
